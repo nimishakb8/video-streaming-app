@@ -1,24 +1,29 @@
 .thumbnailList {
 	display: flex;
+	justify-content: space-between;
+	margin-top: 24px;
 }
 .thumbnail {
-	margin: 10px;
-	padding: 10px;
-	width: 150px;
+	/* margin: 10px; */
+	/* padding: 10px; */
+	/* width: 150px; */
+	width: 18%;
+	cursor: pointer;
 }
 .selected {
 	border: 3px solid red;
-	height: 100px;
-	width: 150px;
+	outline: none;
+	height: auto;
+	width: 100%;
 }
 .normal {
 	border: none;
 	outline: none;
-	height: 100px;
-	width: 150px;
+	height: auto;
+	width: 100%;
 }
 .label {
-	width: 150px;
+	width: 100%;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -29,9 +34,9 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-o-text-overflow: ellipsis;
-	width: 150px;
+	width: 100%;
 }
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
 	.thumbnailList {
 		width: 100vh;
 		justify-content: center;
@@ -49,4 +54,4 @@
 		padding: 10px;
 		width: 15vh;
 	}
-}
+} */

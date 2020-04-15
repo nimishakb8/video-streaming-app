@@ -22,12 +22,12 @@ function App() {
 		setSelectedItem(item);
 	};
 	return (
-		<div className={styles.wrapper}>
-			<SelectedItemContext.Provider value={[selectedItem, setSelectedItem]}>
-				<VideoPlayer data={data} />
-				<Playlist data={data} onClick={onClick} />]
-			</SelectedItemContext.Provider>
-		</div>
+		// <div className={styles.wrapper}>
+		<SelectedItemContext.Provider value={[selectedItem, setSelectedItem]}>
+			<VideoPlayer data={data} />
+			<Playlist data={data} onClick={onClick} />
+		</SelectedItemContext.Provider>
+		// </div>
 	);
 }
 export default App;

@@ -14,13 +14,7 @@ function VideoPlayer(props) {
 		myHandler();
 	}
 
-	const playVideo = () => {
-		return videoData.forEach((item) => {
-			return <source src={item.content_url} type="video/mp4" />;
-		});
-	};
-
-	window.onload = (e) => {
+	useEffect(() => {
 		i = 0;
 
 		document.getElementById('myVideo').setAttribute('src', data[0].content_url);
@@ -30,7 +24,8 @@ function VideoPlayer(props) {
 		document
 			.getElementById('myVideo')
 			.addEventListener('ended', myHandler, false);
-	};
+	}, []);
+
 	function myHandler() {
 		let index;
 
