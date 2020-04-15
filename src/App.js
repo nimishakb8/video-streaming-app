@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
-
+import styles from './App.css';
+import Playlist from './Components/Playlist';
+import VideoPlayer from './Components/VideoPlayer';
+import { findByLabelText } from '@testing-library/react';
+import data from './data';
+import { SelectedItemContext } from './context';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+	const [selectedItem, setSelectedItem] = useState({});
 
+	useEffect(() => {
+		fetch(`https://s3.amazonaws.com/frankly-news-web/test/playlist.json`).then(
+			(res) => {
+				console.log(res);
+			}
+		);
+		console.log(data);
+	});
+	const onClick = (item) => {
+		//console.log('hi', item);
+		setSelectedItem(item);
+	};
+	return (
+		<div className={styles.wrapper}>
+			<SelectedItemContext.Provider value={[selectedItem, setSelectedItem]}>
+				<VideoPlayer data={data} />
+				<Playlist data={data} onClick={onClick} />]
+			</SelectedItemContext.Provider>
+		</div>
+	);
+}
 export default App;

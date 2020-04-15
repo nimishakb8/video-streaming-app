@@ -1,0 +1,52 @@
+.thumbnailList {
+	display: flex;
+}
+.thumbnail {
+	margin: 10px;
+	padding: 10px;
+	width: 150px;
+}
+.selected {
+	border: 3px solid red;
+	height: 100px;
+	width: 150px;
+}
+.normal {
+	border: none;
+	outline: none;
+	height: 100px;
+	width: 150px;
+}
+.label {
+	width: 150px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ellipsis {
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	width: 150px;
+}
+@media only screen and (max-width: 768px) {
+	.thumbnailList {
+		width: 100vh;
+		justify-content: center;
+	}
+	.selected {
+		height: 80px;
+		width: 15vh;
+	}
+	.normal {
+		height: 80px;
+		width: 15vh;
+	}
+	.thumbnail {
+		margin: 10px;
+		padding: 10px;
+		width: 15vh;
+	}
+}
