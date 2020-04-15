@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { findByLabelText } from '@testing-library/react';
 import styles from './styles.module.css';
 import { SelectedItemContext } from '../../context';
 
